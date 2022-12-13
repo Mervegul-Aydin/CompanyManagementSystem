@@ -26,6 +26,7 @@ namespace CompanyManagementSystem.Core.Repositories
         void Remove (T entity); 
 
         void RemoveRange (IEnumerable<T> entites);
-        Task GetByIdAsync();
+
+
     }
 }

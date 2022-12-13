@@ -17,7 +17,6 @@ namespace CompanyManagementSystem.Repository.Configurations
             builder.Property(x => x.Id).UseIdentityColumn();
             builder.Property(x => x.Name).IsRequired(false).HasMaxLength(250);
             builder.HasOne(x => x.Company).WithMany(x => x.CompanyDealer).HasForeignKey(x => x.CompanyId);
-         
             builder.Property(x => x.City).IsRequired(false).HasMaxLength(250);
             builder.Property(x => x.Adress).IsRequired(false).HasMaxLength(500);
             builder.Property(x => x.EMail).IsRequired(false).HasMaxLength(500);
@@ -29,7 +28,6 @@ namespace CompanyManagementSystem.Repository.Configurations
             builder.Property(x => x.CompanyDescription).IsRequired(false).HasMaxLength(1000);
             builder.Property(x => x.InvoiceAddress).IsRequired(false).HasMaxLength(1000);
             builder.Property(x => x.InvoiceMailAddress).IsRequired(false).HasMaxLength(1000);
-
 
         }
     }

@@ -15,7 +15,8 @@ namespace CompanyManagementSystem.Repository.Repositories
     { 
         protected readonly AppDbContexts.AppDbContext.AppDbContext _context;
 
-            private readonly DbSet<T> _dbSet;
+        private readonly DbSet<T> _dbSet;
+
         public GenericRepository(AppDbContexts.AppDbContext.AppDbContext context)
         {
             _context = context;
@@ -49,11 +50,7 @@ namespace CompanyManagementSystem.Repository.Repositories
             return await _dbSet.FindAsync(Id);
         }
 
-        public Task GetByIdAsync()
-        {
-            throw new NotImplementedException();
-        }
-
+     
         public void Remove(T entity)
         {
             _dbSet.Remove(entity);

@@ -43,15 +43,18 @@ namespace CompanyManagementSystem.Repository.Repositories
             return await _context.Companies.Include(x => x.BranchOffice).Where(x => x.Id == companyId).SingleOrDefaultAsync();
         }
 
+
         public async Task<Company> GetWebCompanyIdBranchOfficeAsync(int companyId)
         {
             return await _context.Companies.Include(x => x.BranchOffice).Where(x => x.Id == companyId).SingleOrDefaultAsync();
         }
 
+
         public async Task<Company> GetApiCompanyIdCompanyDealerAsync(int companyId)
         {
             return await _context.Companies.Include(x => x.CompanyDealer).Where(x => x.Id == companyId).SingleOrDefaultAsync();
         }
+
 
         public async Task<Company> GetWebCompanyIdCompanyDealerAsync(int companyId)
         {
