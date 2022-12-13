@@ -1,0 +1,57 @@
+﻿@{
+    ViewData["Title"] = "Details";
+}
+@model CompanyDealerDto
+
+<div class="col-lg-12">
+    <div class="card">
+        <div class="card-body">
+            <form asp-controller="CompanyDealer" asp-action="Details" method="post" class="needs-validation" novalidate>
+                <h4 class="card-title">Bayi</h4>
+                <input type="hidden" asp-for="Id" id="CompanyDealerIdUpdate">
+
+                <div class="mb-3 row">
+                    <label asp-for="Id" class="col-md-2 col-form-label"></label>
+                    <div class="col-md-6">
+                        <select id="CompanyDealerIdUpdate" asp-for="Name" asp-items="ViewBag.companyDealer" class="form-select" disabled readonly></select>
+                        <span asp-validation-for="Id" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="mb-3 row">
+                    <label asp-for="CompanyId" class="col-md-2 col-form-label">Firma</label>
+                    <div class="col-md-6">
+                        <select id="CompanyIdSave" asp-for="CompanyId" asp-items="ViewBag.companies" class="form-select" disabled readonly></select>
+                        <span asp-validation-for="CompanyId" class="text-danger"></span>
+                    </div>
+                </div>
+
+
+                <div class="mb-3 row">
+                    <label asp-for="Name" class="col-md-2 col-form-label" for="CompanyNameSave">Bayi Adı</label>
+                    <div class="col-md-6">
+                        <input id="CompanyNameUpdate" asp-for="Name" type="text" class="form-control"  disabled readonly >
+                        
+                    </div>
+                </div>
+
+                <div class="mb-3 row">
+                    <label asp-for="Explanation" class="col-md-2 col-form-label" for="CompanyExpSave">Bayi Açıklama</label>
+                    <div class="col-md-6">
+                        <input id="CompanyExpUpdate" asp-for="Name" type="text" class="form-control" disabled readonly>
+
+                    </div>
+                </div>
+
+
+
+
+            </form>
+
+
+   
+
+        </div>
+    </div>
+</div>
+

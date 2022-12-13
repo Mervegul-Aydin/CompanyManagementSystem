@@ -1,0 +1,133 @@
+﻿@{
+    ViewData["Title"] = "Update";
+}
+@model CompanyDto
+
+<div class="col-lg-12">
+    <div class="card">
+        <div class="card-body">
+            <form asp-controller="Company" asp-action="Update" method="post" class="needs-validation" novalidate>
+                <h4 class="card-title">Firma Güncelle</h4>
+                <input type="hidden" asp-for= "Id" id="CompanyIdUpdate">
+
+
+
+
+                <div class="mb-3 row">
+                    <label asp-for="Name" class="col-md-2 col-form-label" for="CompanyNameSave">Firma Adı</label>
+                    <div class="col-md-6">
+                        <input asp-for="Name" type="text" class="form-control" id="CompanyNameSave" placeholder="Firma Adını Yazınız" required>
+                        <div class="invalid-feedback">Firma Adı Boş olamaz!</div>
+                    </div>
+                </div>
+
+                <div class="mb-3 row">
+                    <label asp-for="CompanyDescription" class="col-md-2 col-form-label">Renk Kodu</label>
+                    <div class="col-md-6">
+                        <input asp-for="CompanyDescription" id="CompanyDescriptionSave" class="form-control" type="text" placeholder="Şirket Tanımını Yazınız" required>
+                        <div class="invalid-feedback">Şirket Tanımı Boş olamaz!</div>
+                    </div>
+                </div>
+
+
+                <div class="mb-3 row">
+                    <label asp-for="Adress" class="col-md-2 col-form-label" for="CompanyAdressSave">Firma Adresi</label>
+                    <div class="col-md-6">
+                        <input asp-for="Adress" type="text" class="form-control" id="AdressSave" placeholder="Firma Adresini Yazınız" required>
+                        <div class="invalid-feedback">Firma Adresi Boş olamaz!</div>
+                    </div>
+                </div>
+
+
+                <div class="mb-3 row">
+                    <label asp-for="Country" class="col-md-2 col-form-label" for="CompanyCountrySave">Ülke</label>
+                    <div class="col-md-6">
+                        <input asp-for="Country" type="text" class="form-control" id="CountrySave" placeholder="Ülke Yazınız" required>
+                        <div class="invalid-feedback">Ülke Boş olamaz!</div>
+                    </div>
+                </div>
+
+
+                <div class="mb-3 row">
+                    <label asp-for="City" class="col-md-2 col-form-label" for="CompanyCitySave">Şehir</label>
+                    <div class="col-md-6">
+                        <input asp-for="City" type="text" class="form-control" id="CitySave" placeholder="Şehir Yazınız" required>
+                        <div class="invalid-feedback">Şehir Boş olamaz!</div>
+                    </div>
+                </div>
+
+                <div class="mb-3 row">
+                    <label asp-for="EMail" class="col-md-2 col-form-label" for="CompanyEMailSave">Şehir</label>
+                    <div class="col-md-6">
+                        <input asp-for="EMail" type="text" class="form-control" id="EMailSave" placeholder="E-Mail Yazınız" required>
+                        <div class="invalid-feedback">E-Mail Boş olamaz!</div>
+                    </div>
+                </div>
+
+                <div class="mb-3 row">
+                    <label asp-for="PhoneNumber" class="col-md-2 col-form-label" for="CompanyPhoneNumberSave">Telefon</label>
+                    <div class="col-md-6">
+                        <input asp-for="PhoneNumber" type="text" class="form-control" id="PhoneSave" placeholder="Telefon Yazınız" required>
+                        <div class="invalid-feedback">Telefon Boş olamaz!</div>
+                    </div>
+                </div>
+
+                <div class="mb-3 row">
+                    <label asp-for="CompanyWebUrl" class="col-md-2 col-form-label" for="CompanyWebUrlSave">WEB Adresi</label>
+                    <div class="col-md-6">
+                        <input asp-for="CompanyWebUrl" type="text" class="form-control" id="CompanyWebUrlSave" placeholder="WEB Adresi Yazınız" required>
+                        <div class="invalid-feedback">WEB Adresi Boş olamaz!</div>
+                    </div>
+                </div>
+
+                <div class="mb-3 row">
+                    <label asp-for="TaxNumber" class="col-md-2 col-form-label" for="TaxNumberlSave">Vergi Numarası</label>
+                    <div class="col-md-6">
+                        <input asp-for="TaxNumber" type="text" class="form-control" id="TaxNumberSave" placeholder="Vergi Numarasını Yazınız" required>
+                        <div class="invalid-feedback">Vergi Numarası Boş olamaz!</div>
+                    </div>
+                </div>
+
+                <div class="mb-3 row">
+                    <label asp-for="TaxAdministration" class="col-md-2 col-form-label" for="TaxAdministrationSave">Vergi Dairesi</label>
+                    <div class="col-md-6">
+                        <input asp-for="TaxAdministration" type="text" class="form-control" id="TaxAdministrationSave" placeholder="Vergi Dairesini Yazınız" required>
+                        <div class="invalid-feedback">Vergi Dairesi Boş olamaz!</div>
+                    </div>
+                </div>
+
+                <div class="mb-3 row">
+                    <label asp-for="InvoiceAddress" class="col-md-2 col-form-label" for="InvoiceAddressSave">Fatura Adresi</label>
+                    <div class="col-md-6">
+                        <input asp-for="InvoiceAddress" type="text" class="form-control" id="InvoiceAddressSave" placeholder="Fatura Adresini Yazınız" required>
+                        <div class="invalid-feedback">Fatura Adresi Boş olamaz!</div>
+                    </div>
+                </div>
+
+                <div class="mb-3 row">
+                    <label asp-for="InvoiceMailAddress" class="col-md-2 col-form-label" for="InvoiceMailAddressSave">Fatura Mail Adresi</label>
+                    <div class="col-md-6">
+                        <input asp-for="InvoiceMailAddress" type="text" class="form-control" id="InvoiceMailAddressSave" placeholder="Fatura Mail Adresini Yazınız" required>
+                        <div class="invalid-feedback">Fatura Mail Adresi Boş olamaz!</div>
+                    </div>
+                </div>
+
+                <div class="mb-3 row">
+                    <label asp-for="CompanyType" class="col-md-2 col-form-label" for="CompanyTypeSave">Firma Türü </label>
+                    <div class="col-md-6">
+                        <input asp-for="CompanyType" type="text" class="form-control" id="CompanyTypeSave" placeholder="Firma Türünü Yazınız" required>
+                        <div class="invalid-feedback">Firma Türü Boş olamaz!</div>
+                    </div>
+                </div>
+
+
+
+                <input type="submit" class="btn btn-primary waves-effect waves-light me-1 form-group" />
+
+            </form>
+
+
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,347 @@
+﻿<!DOCTYPE html>
+<html dir="ltr" lang="tr-TR">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="content-language" content="tr" />
+    <title>Dashboard | FBU - Admin & Dashboard Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+    <meta content="Themesbrand" name="author" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="~/images/favicon.ico">
+    <!-- Responsive Table css -->
+    <link href="~/libs/admin-resources/rwd-table/rwd-table.min.css" rel="stylesheet" type="text/css" />
+    <!-- Select2 css -->
+    <link href="~/libs/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+    <!-- Dropzone css -->
+    <link href="~/libs/dropzone/min/dropzone.min.css" rel="stylesheet" type="text/css" /> dropzone
+    <!-- Bootstrap Css -->
+    <link href="~/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link href="~/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link href="~/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+    <!-- Toastr Css-->
+    <link rel="stylesheet" type="text/css" href="~/libs/toastr/build/toastr.min.css">
+    <!-- DataTables Css-->
+    <link href="~/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <!-- Jquery Script -->
+    <script src="~/libs/jquery/jquery.min.js"></script>
+    <!-- Toastr Script -->
+    <script src="~/libs/toastr/build/toastr.min.js"></script>
+
+    <!-- Form-validation -->
+    <script src="~/libs/parsleyjs/parsley.min.js"></script>
+    <script src="~/js/pages/form-validation.init.js"></script>
+</head>
+
+<body>
+
+    @if (TempData["Success"] != null)
+    {
+        <script type="text/javascript">
+            toastr.success('@TempData["Success"]', 'Başarılı')
+        </script>
+    }
+    else if (TempData["info"] != null)
+    {
+        <script type="text/javascript">
+            toastr.info('@TempData["info"]', 'Bilgi')
+        </script>
+    }
+
+    <div id="layout-wrapper">
+        <header id="page-topbar">
+            <div class="navbar-header">
+                <div class="d-flex">
+                    <!-- LOGO -->
+                    <div class="navbar-brand-box">
+                        <a href="index.html" class="logo logo-dark">
+                            <span class="logo-sm">
+                                <img src="~/images/logo-sm.png" alt="" height="22">
+                            </span>
+                            <span class="logo-lg">
+                                <img src="~/images/logo-dark.png" alt="" height="20">
+                            </span>
+                        </a>
+                    </div>
+
+                    <button type="button" class="btn btn-sm px-3 font-size-16 header-item waves-effect vertical-menu-btn">
+                        <i class="fa fa-fw fa-bars"></i>
+                    </button>
+
+                </div>
+
+                <div class="d-flex">
+
+                    <div class="dropdown d-inline-block d-lg-none ms-2">
+                        <button type="button" class="btn header-item noti-icon waves-effect" id="page-header-search-dropdown"
+                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="uil-search"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
+                             aria-labelledby="page-header-search-dropdown">
+
+                            <form class="p-3">
+                                <div class="m-0">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Search ..." aria-label="Recipient's username">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary" type="submit"><i class="mdi mdi-magnify"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+
+
+
+
+
+                    <div class="dropdown d-inline-block">
+                        <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
+                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img class="rounded-circle header-profile-user" src="~/images/users/avatar-4.jpg"
+                                 alt="Header Avatar">
+                            <span class="d-none d-xl-inline-block ms-1 fw-medium font-size-15">Marcus</span>
+                            <i class="uil-angle-down d-none d-xl-inline-block font-size-15"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-end">
+                            <!-- item-->
+                            <a class="dropdown-item" href="#"><i class="uil uil-user-circle font-size-18 align-middle text-muted me-1"></i> <span class="align-middle">View Profile</span></a>
+                            <a class="dropdown-item" href="#"><i class="uil uil-wallet font-size-18 align-middle me-1 text-muted"></i> <span class="align-middle">My Wallet</span></a>
+                            <a class="dropdown-item d-block" href="#"><i class="uil uil-cog font-size-18 align-middle me-1 text-muted"></i> <span class="align-middle">Settings</span> <span class="badge bg-soft-success rounded-pill mt-1 ms-2">03</span></a>
+                            <a class="dropdown-item" href="#"><i class="uil uil-lock-alt font-size-18 align-middle me-1 text-muted"></i> <span class="align-middle">Lock screen</span></a>
+                            <a class="dropdown-item" href="#"><i class="uil uil-sign-out-alt font-size-18 align-middle me-1 text-muted"></i> <span class="align-middle">Sign out</span></a>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </header>
+
+        <!-- ========== Left Sidebar Start ========== -->
+        <div class="vertical-menu">
+
+            <!-- LOGO -->
+            <div class="navbar-brand-box">
+                <a href="index.html" class="logo logo-dark">
+                    <span class="logo-sm">
+                        <img src="~/images/logo-sm.png" alt="" height="22">
+                    </span>
+                    <span class="logo-lg">
+                        <img src="~/images/logo-dark.png" alt="" height="20">
+                    </span>
+                </a>
+
+                <a href="index.html" class="logo logo-light">
+                    <span class="logo-sm">
+                        <img src="~/images/logo-sm.png" alt="" height="22">
+                    </span>
+                    <span class="logo-lg">
+                        <img src="~/images/logo-light.png" alt="" height="20">
+                    </span>
+                </a>
+            </div>
+
+            <button type="button" class="btn btn-sm px-3 font-size-16 header-item waves-effect vertical-menu-btn">
+                <i class="fa fa-fw fa-bars"></i>
+            </button>
+
+            <div data-simplebar class="sidebar-menu-scroll">
+
+                <!--- Sidemenu -->
+                <div id="sidebar-menu">
+                    <!-- Left Menu Start -->
+                    <ul class="metismenu list-unstyled" id="side-menu">
+                        <li class="menu-title">Menu</li>
+
+                        <li>
+                            <a href="index.html">
+                                <i class="uil-home-alt"></i><span class="badge rounded-pill bg-primary float-end">01</span>
+                                <span>Anasayfa</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                <i class="uil-window-section"></i>
+                                <span>Tanımlamalar</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="true">
+                          
+                                
+                                <li>
+                                    <a href="javascript: void(0);" class="has-arrow">Firma Ayarları</a>
+                                    <ul class="sub-menu" aria-expanded="true">
+                                        <li><a asp-area="" asp-controller="Company" asp-action="Index">Firma Listesi</a></li>
+                                        <li><a asp-area="" asp-controller="Company" asp-action="Save">Firma Ekle</a></li>
+
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <a href="javascript: void(0);" class="has-arrow">Bayi Ayarları</a>
+                                    <ul class="sub-menu" aria-expanded="true">
+                                        <li><a asp-area="" asp-controller="CompanyDealer" asp-action="Index">Bayi Listesi</a></li>
+                                        <li><a asp-area="" asp-controller="CompanyDealer" asp-action="Save">Bayi Ekle</a></li>
+
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <a href="javascript: void(0);" class="has-arrow">Şube Ayarları</a>
+                                    <ul class="sub-menu" aria-expanded="true">
+                                        <li><a asp-area="" asp-controller="BranchOffice" asp-action="Index">Şube Listesi</a></li>
+                                        <li><a asp-area="" asp-controller="BranchOffice" asp-action="Save">Şube Ekle</a></li>
+
+                                    </ul>
+                                </li>
+
+
+
+
+                            </ul>
+                        </li>
+
+
+                    </ul>
+                </div>
+                <!-- Sidebar -->
+            </div>
+        </div>
+        <!-- Left Sidebar End -->
+
+        <div class="main-content">
+            <!-- Start Page-content -->
+            <div class="page-content">
+                <div class="container-fluid">
+
+                    <!-- start page title -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="page-title-box d-flex align-items-center justify-content-between">
+                                <h4 class="mb-0">Dashboard</h4>
+
+                                <div class="page-title-right">
+                                    <ol class="breadcrumb m-0">
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Minible</a></li>
+                                        <li class="breadcrumb-item active">Dashboard</li>
+                                    </ol>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <main role="main">
+                        <div class="container-fluid">@RenderBody()</div>
+                    </main>
+                    <!-- end page title -->
+                </div> <!-- container-fluid -->
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <script>document.write(new Date().getFullYear())</script> ©  - Gorevcim.WEB - Teknoloji Uzmanım A.Ş.
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="text-sm-end d-none d-sm-block">
+                            Web Sitesi Uzmanım <i class="mdi mdi-heart text-danger"></i> <a href="#" target="_blank" class="text-reset">Teknoloji Uzmanım A.Ş.</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <!-- JAVASCRIPT -->
+
+    <script src="~/libs/jquery/jquery.min.js"></script>
+    <script src="~/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/libs/metismenu/metisMenu.min.js"></script>
+    <script src="~/libs/simplebar/simplebar.min.js"></script>
+    <script src="~/libs/node-waves/waves.min.js"></script>
+    <script src="~/libs/waypoints/lib/jquery.waypoints.min.js"></script>
+    <script src="~/libs/jquery.counterup/jquery.counterup.min.js"></script>
+
+    <!-- apexcharts -->
+    <script src="~/libs/apexcharts/apexcharts.min.js"></script>
+
+    <script src="~/js/pages/dashboard.init.js"></script>
+
+    <!-- select 2 plugin -->
+    <script src="~/libs/select2/js/select2.min.js"></script>
+
+    <!-- dropzone plugin -->
+    <script src="~/libs/dropzone/min/dropzone.min.js"></script>
+
+
+    <!-- init js -->
+    <script src="~/js/pages/ecommerce-add-product.init.js"></script>
+
+    <!-- ckeditor -->
+    <script src="~/libs/@@ckeditor/ckeditor5-build-classic/build/ckeditor.js"></script>
+
+    <!--tinymce js-->
+    <script src="~/libs/tinymce/tinymce.min.js"></script>
+
+    <!-- init js -->
+    <script src="~/js/pages/form-editor.init.js"></script>
+
+
+    <!-- App js -->
+    <script src="~/js/app.js"></script>
+
+    <!-- DataTables -->
+    <script src="~/libs/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="~/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+
+    <!-- DataTables Buttons examples -->
+    <script src="~/libs/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="~/libs/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js"></script>
+    <script src="~/libs/jszip/jszip.min.js"></script>
+    <script src="~/libs/pdfmake/build/pdfmake.min.js"></script>
+    <script src="~/libs/pdfmake/build/vfs_fonts.js"></script>
+    <script src="~/libs/datatables.net-buttons/js/buttons.html5.min.js"></script>
+    <script src="~/libs/datatables.net-buttons/js/buttons.print.min.js"></script>
+    <script src="~/libs/datatables.net-buttons/js/buttons.colVis.min.js"></script>
+
+
+    <!-- Responsive examples -->
+    <script src="~/libs/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="~/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
+    <!-- Datatable init js -->
+    <script src="~/js/pages/datatables.init.js"></script>
+    <!-- Responsive Table js -->
+    <script src="~/libs/admin-resources/rwd-table/rwd-table.min.js"></script>
+
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#classic-editor'))
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
+
+
+
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+</html>

@@ -1,0 +1,139 @@
+﻿@{
+    ViewData["Title"] = "Details";
+}
+@model CompanyDto 
+
+<div class="col-lg-12">
+    <div class="card">
+        <div class="card-body">
+            <form asp-controller="Company" asp-action="Details" method="post" class="needs-validation" novalidate>
+                <h4 class="card-title">Firma</h4>
+                <input type="hidden" asp-for="Id" id="CompanyIdUpdate">
+
+                <div class="mb-3 row">
+                    <label asp-for="Id" class="col-md-2 col-form-label"></label>
+                    <div class="col-md-6">
+                        <select id="CompanyIdUpdate" asp-for="Name" asp-items="ViewBag.company" class="form-select" disabled readonly></select>
+                        <span asp-validation-for="Id" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="mb-3 row">
+                    <label asp-for="Name" class="col-md-2 col-form-label" for="CompanyNameSave">Firma Adı</label>
+                    <div class="col-md-6">
+                        <input id="CompanyNameUpdate" asp-for="Name" type="text" class="form-control" placeholder="Firma Adını Yazınız" disabled readonly >
+                        
+                    </div>
+                </div>
+
+                <div class="mb-3 row">
+                    <label asp-for="CompanyDescription" class="col-md-2 col-form-label"></label>
+                    <div class="col-md-6">
+                        <input id="CompanyDescriptionUpdate" asp-for="CompanyDescription" type="text" class="form-control" disabled readonly>
+                        
+                    </div>
+                </div>
+
+                <div class="mb-3 row">
+                    <label asp-for="Adress" class="col-md-2 col-form-label"></label>
+                    <div class="col-md-6">
+                        <input id="Adress" asp-for="CompanyDescription" type="text" class="form-control" disabled readonly>
+
+                    </div>
+                </div>
+
+
+                <div class="mb-3 row">
+                    <label asp-for="Country" class="col-md-2 col-form-label"></label>
+                    <div class="col-md-6">
+                        <input id="CompanyCountryId" asp-for="Country" type="text" class="form-control" disabled readonly>
+
+                    </div>
+                </div>
+
+
+                <div class="mb-3 row">
+                    <label asp-for="City" class="col-md-2 col-form-label"></label>
+                    <div class="col-md-6">
+                        <input id="CompanyCityId" asp-for="City" type="text" class="form-control" disabled readonly>
+
+                    </div>
+                </div>
+
+
+                <div class="mb-3 row">
+                    <label asp-for="EMail" class="col-md-2 col-form-label"></label>
+                    <div class="col-md-6">
+                        <input id="CompanyEMailId" asp-for="EMail" type="text" class="form-control" disabled readonly>
+
+                    </div>
+                </div>
+
+                <div class="mb-3 row">
+                    <label asp-for="PhoneNumber" class="col-md-2 col-form-label"></label>
+                    <div class="col-md-6">
+                        <input id="CompanyPhoneNumberId" asp-for="PhoneNumber" type="text" class="form-control" disabled readonly>
+
+                    </div>
+                </div>
+
+
+                <div class="mb-3 row">
+                    <label asp-for="CompanyWebUrl" class="col-md-2 col-form-label"></label>
+                    <div class="col-md-6">
+                        <input id="CompanyCompanyWebUrlId" asp-for="CompanyWebUrl" type="text" class="form-control" disabled readonly>
+
+                    </div>
+                </div>
+
+                <div class="mb-3 row">
+                    <label asp-for="TaxNumber" class="col-md-2 col-form-label"></label>
+                    <div class="col-md-6">
+                        <input id="CompanyTaxNumberId" asp-for="TaxNumber" type="text" class="form-control" disabled readonly>
+
+                    </div>
+                </div>
+
+                <div class="mb-3 row">
+                    <label asp-for="TaxAdministration" class="col-md-2 col-form-label"></label>
+                    <div class="col-md-6">
+                        <input id="CompanyTaxAdministrationId" asp-for="TaxAdministration" type="text" class="form-control" disabled readonly>
+
+                    </div>
+                </div>
+
+                <div class="mb-3 row">
+                    <label asp-for="InvoiceAddress" class="col-md-2 col-form-label"></label>
+                    <div class="col-md-6">
+                        <input id="CompanyInvoiceAddressId" asp-for="InvoiceAddress" type="text" class="form-control" disabled readonly>
+
+                    </div>
+                </div>
+
+
+                <div class="mb-3 row">
+                    <label asp-for="InvoiceMailAddress" class="col-md-2 col-form-label"></label>
+                    <div class="col-md-6">
+                        <input id="CompanyInvoiceMailAddressId" asp-for="InvoiceMailAddress" type="text" class="form-control" disabled readonly>
+
+                    </div>
+                </div>
+
+                <div class="mb-3 row">
+                    <label asp-for="CompanyType" class="col-md-2 col-form-label"></label>
+                    <div class="col-md-6">
+                        <input id="CompanyTypeId" asp-for="CompanyType" type="text" class="form-control" disabled readonly>
+
+                    </div>
+                </div>
+
+
+            </form>
+
+
+   
+
+        </div>
+    </div>
+</div>
+

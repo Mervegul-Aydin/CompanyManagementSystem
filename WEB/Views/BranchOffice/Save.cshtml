@@ -1,0 +1,98 @@
+﻿@{
+    ViewData["Title"] = "Save";
+}
+@model BranchOfficeDto
+
+
+
+
+<div class="col-lg-12">
+    <div class="card">
+        <div class="card-body">
+            <form asp-action="Save" method="post" asp-controller="BranchOffice" class="needs-validation" novalidate>
+                <h4 class="card-title">Şube Kayıt</h4>
+
+                <div class="mb-3 row">
+                    <label asp-for="CompanyId" class="col-md-2 col-form-label">Firma</label>
+                    <div class="col-md-6">
+                        <select id="CompanyIdSave" asp-for="CompanyId" asp-items="ViewBag.companies" class="form-select" placeholder="Firma Seçiniz"></select>
+                        <span asp-validation-for="CompanyId" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="mb-3 row">
+                    <label asp-for="Name" class="col-md-2 col-form-label" for="CompanyNameSave">Firma Adı</label>
+                    <div class="col-md-6">
+                        <input asp-for="Name" type="text" class="form-control" id="CompanyNameSave" placeholder="Firma Adını Yazınız" required>
+                        <div class="invalid-feedback">Firma Adı Boş olamaz!</div>
+                    </div>
+                </div>
+
+              
+
+                <div class="mb-3 row">
+                    <label asp-for="Adress" class="col-md-2 col-form-label" for="CompanyAdressSave">Şube Adresi</label>
+                    <div class="col-md-6">
+                        <input asp-for="Adress" type="text" class="form-control" id="AdressSave" placeholder="Şube Adresini Yazınız" required>
+                        <div class="invalid-feedback">Firma Adresi Boş olamaz!</div>
+                    </div>
+                </div>
+
+
+                <div class="mb-3 row">
+                    <label asp-for="Country" class="col-md-2 col-form-label" for="CompanyCountrySave">Ülke</label>
+                    <div class="col-md-6">
+                        <input asp-for="Country" type="text" class="form-control" id="CountrySave" placeholder="Ülke Yazınız" required>
+                        <div class="invalid-feedback">Ülke Boş olamaz!</div>
+                    </div>
+                </div>
+
+
+                <div class="mb-3 row">
+                    <label asp-for="City" class="col-md-2 col-form-label" for="CompanyCitySave">Şehir</label>
+                    <div class="col-md-6">
+                        <input asp-for="City" type="text" class="form-control" id="CitySave" placeholder="Şehir Yazınız" required>
+                        <div class="invalid-feedback">Şehir Boş olamaz!</div>
+                    </div>
+                </div>
+
+
+
+                <div class="mb-3 row">
+                    <label asp-for="PhoneNumber" class="col-md-2 col-form-label" for="CompanyPhoneNumberSave">Telefon</label>
+                    <div class="col-md-6">
+                        <input asp-for="PhoneNumber" type="text" class="form-control" id="PhoneSave" placeholder="Telefon Yazınız" required>
+                        <div class="invalid-feedback">Telefon Boş olamaz!</div>
+                    </div>
+                </div>
+
+             
+
+
+                <div class="mb-3 row">
+                    <label asp-for="Explanation" class="col-md-2 col-form-label" for="CompanyTypeSave">Açıklama </label>
+                    <div class="col-md-6">
+                        <textarea id="elm1" asp-for="Explanation" class="form-control"></textarea>
+                    </div>
+                </div>
+
+               
+
+
+
+                <input type="submit" class="btn btn-primary waves-effect waves-light me-1 form-group" />
+
+            </form>
+
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
